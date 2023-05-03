@@ -1,0 +1,35 @@
+{%  for i in member %}
+        
+          
+  
+<div  class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+ <div class="member-img">
+   <img src="{{MEDIA_URL}}{{i.picture}}" style="width: 250px;height: auto;" class="img-fluid" alt="">
+   <div class="social">
+     <a href="#"><i class="bi bi-twitter"></i></a>
+     <a href="#"><i class="bi bi-facebook"></i></a>
+     <a href="#"><i class="bi bi-instagram"></i></a>
+     <a href="#"><i class="bi bi-linkedin"></i></a>
+   </div>
+ </div>
+ <div class="member-info text-center">
+   <h4>{{i.firstname}} - {{i.lastname}}</h4>
+     {%  if i.education_level == "d" %}
+
+       <span>دیپلم</span>
+
+     {%  elif i.education_level == "b" %}
+       <span>لیسانس</span>
+
+       {%  elif i.education_level == "m" %}
+         <span>فوق لیسانس</span>
+
+       {%  elif i.education_level == "p" %}
+         <span>دکترا </span>
+
+
+     {%  endif %}
+   <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
+ </div>
+</div>
+ {%  endfor %}

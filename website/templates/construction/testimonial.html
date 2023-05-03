@@ -1,0 +1,60 @@
+{%  load static %}
+{%  block testimonial%}
+<section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>رضایت نامه ها </h2>
+        <p>در بخش زیر میتوانید ، نطرات را مطالعه بفرمایید </p>
+      </div>
+      
+      <div class="slides-2 swiper">
+        
+        <div class="swiper-wrapper">
+            {%  for i in test %}  
+          <div class="swiper-slide">
+            
+            <div class="testimonial-wrap">
+                
+              <div class="testimonial-item">
+                
+                <img src="{{MEDIA_URL}}{{i.person.picture}}" class="testimonial-img" alt="">
+                <h3>{{i.person}}</h3>
+                <h4>{{i.person.level}}</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i dir ="ltr" class="bi bi-quote quote-icon-left"></i>
+                  {{i.message|safe}}
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                
+                 
+            </div>
+            
+              
+            
+              
+            </div>
+            
+          </div>
+          {%  endfor %} 
+          
+          <!-- End testimonial item -->
+          
+        
+          
+          
+
+
+
+
+        </div>
+        <div class="swiper-pagination"></div>
+        
+      </div>
+
+    </div>
+  </section>
+  {% endblock %}

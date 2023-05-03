@@ -1,0 +1,55 @@
+
+{%  load static %}
+{%  block team_member %}
+<section id="team" class="team">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>تیم ما </h2>
+        <p>اعضای تیم آینده سازان </p>
+      </div>
+
+      <div class="row gy-5">
+        {%  for i in member %}
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+          <div class="member-img">
+            <img src="{{MEDIA_URL}}{{i.picture}}" class="img-fluid" alt="">
+            <div class="social">
+              <a href="{% url 'blog:home' %}"><i class="bi bi-twitter"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href="{{i.instagram}}"><i class="bi bi-instagram"></i></a>
+              <a href="{{i.linkedin}}"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info text-center">
+            <h4>{{i.firstname}} - {{i.lastname}}</h4>
+            <span>{{i.level}}</span>
+          {%  if i.discription_of_member != None  %}
+            <p>{{i.discription_of_member|safe}}</p>
+          {%  endif %}
+          </div>
+        </div>
+        {% endfor %}
+        <!-- End Team Member -->
+
+
+        <!-- End Team Member -->
+
+
+        <!-- End Team Member -->
+
+
+        <!-- End Team Member -->
+
+
+        <!-- End Team Member -->
+
+ 
+        <!-- End Team Member -->
+
+      </div>
+
+    </div>
+  </section>
+  {%    endblock %}
